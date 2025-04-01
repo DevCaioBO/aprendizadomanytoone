@@ -18,7 +18,7 @@ import jakarta.validation.Valid;
 public class UsuarioController {
 	@Autowired
 	UsuarioService usuarioService;
-	@PostMapping
+	@PostMapping// já tomando cuidado para n expor a entidade
 	public ResponseEntity<UsuarioDTO> salvar(@Valid @RequestBody UsuarioDTO dto) {
 		dto = usuarioService.salvar(dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(dto) ;

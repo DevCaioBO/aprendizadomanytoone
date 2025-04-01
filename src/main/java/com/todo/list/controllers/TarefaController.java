@@ -23,7 +23,7 @@ public class TarefaController {
 	@Autowired
 	TarefaService tarefaService;
 	
-	@PostMapping
+	@PostMapping // já tomando cuidado para n expor a entidade
 	public ResponseEntity<TarefaDTO> criarTarefa(@Valid @RequestBody TarefaDTO dto){
 		
 		dto = tarefaService.salvarTarefa(dto);
